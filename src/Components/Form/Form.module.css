@@ -1,0 +1,79 @@
+.Main {
+    height: 150px;
+    width: 100px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 30vh;
+    padding: 50px;
+    padding-top: 180px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+}
+
+.Label{
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.Input{
+    width: 80%;
+    height:7vh;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced6e0;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+    padding: 5px 15px;
+    background: none;
+    color: #1a3b5d;
+    font-family: "Source Sans Pro", sans-serif;
+    margin-bottom: 5%;
+}
+
+.Date{
+    width: 25%;
+    height: 7vh;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced6e0;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+    padding: 5px 15px;
+    background: none;
+    color: #1a3b5d;
+    font-family: "Source Sans Pro", sans-serif;
+}
+.GroupDate{
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+.CvvLabel{
+    margin-left: 40%;
+}
+
+.DateContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+@media (min-width: 500px) and (min-height: 400px) {
+    .Main{
+        width: 350px;
+        height: 300px; 
+    }
+}
+@media (min-width: 500px) and (min-height: 401px) {
+    .Main{
+        width: 450px;
+        height: 400px; 
+    }
+}
+@media (min-width: 1000px) and (min-height: 700px) {
+    .Main{
+        width: 550px;
+        height: 350px; 
+    }
+}
