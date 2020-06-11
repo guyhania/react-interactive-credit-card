@@ -2,10 +2,9 @@ import React from 'react';
 import classes from './Name.module.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Dig from '../Digits/Digit/Digit';
-import Auxiliary from '../../../hoc/Auxiliary';
 
 const Name = (props) => (
-    <Auxiliary>
+    <>
         <div className={classes.NameContainer}>
             <label className={classes.Label} htmlFor="name">Card Holder</label>
             <TransitionGroup id="name" className={classes.Name}>
@@ -26,7 +25,7 @@ const Name = (props) => (
                     </CSSTransition>))}
             </TransitionGroup>
         </div>
-    </Auxiliary>
+    </>
 )
 export default Name;
 

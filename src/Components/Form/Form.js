@@ -11,57 +11,59 @@ const maxInput = (event) => {
 const Form = props => {
   return (
     <form className={classes.Main}>
-      
-      {/* Credit number */}
-      <div>
-        <label htmlFor="number" className={classes.Label} />
+      <div className={classes.FormContainer}>
+        {/* Credit number */}
+        <div>
+          <label htmlFor="number" className={classes.Label} />
           Card Number
         <input
-          autoFocus
-          className={classes.Input}
-          type="number"
-          name="number"
-          onKeyPress={maxInput}
-          onChange={props.changeNumber} />
-      </div>
-      
-      {/* Cardholder name */}
-      <div>
-        <label htmlFor="name" className={classes.Label} />
+            autoFocus
+            className={classes.Input}
+            type="number"
+            name="number"
+            onKeyPress={maxInput}
+            onChange={props.changeNumber} />
+        </div>
+
+        {/* Cardholder name */}
+        <div>
+          <label htmlFor="name" className={classes.Label} />
           Card Holder
         <input
-          className={classes.Input}
-          type="text"
-          name="name"
-          onChange={props.changeName} />
-      </div>
+            className={classes.Input}
+            type="text"
+            name="name"
+            onChange={props.changeName} />
+        </div>
 
-      {/*Expiration Date*/}
-      <label htmlFor="date" className={classes.Label}>Expiration Date</label>
-      <label htmlFor="cvv" className={[classes.Label ,classes.CvvLabel].join(' ')}> CVV </label>
-      <div className={classes.DateContainer} name="date">
-        
-        {/* Month */}
-        <select className={classes.Date} onChange={props.changeMonth}>
-          <option disabled={true} defaultValue={true}>Month</option>
-          {monthsArr.map(month => {
-            return <option value={month}>{month}</option>
-          })}
-        </select>
-        {/* Year */}
-        <select className={classes.Date} onChange={props.changeYear}>
-          <option disabled={true} defaultValue={true}>Year</option>
-          {monthsArr.map((year, index) => {
-            return <option value={currentYear + index}>{currentYear + index}</option>
-          })}
-        </select>
-        {/* CVV */}
-        <input
-          className={classes.Date}
-          type="text"
-          name="cvv"
-          onChange={props.changeCVV}
-          onFocus={props.cardFlip} />
+        {/*Expiration Date*/}
+        <label htmlFor="date" className={classes.Label}>Expiration Date</label>
+        <label htmlFor="cvv" className={[classes.Label, classes.CvvLabel].join(' ')}> CVV </label>
+        <div className={classes.DateContainer} name="date">
+
+          {/* Month */}
+          <select className={classes.Date} onChange={props.changeMonth}>
+            <option disabled={true} defaultValue={true}>Month</option>
+            {monthsArr.map(month => {
+              return <option value={month}>{month}</option>
+            })}
+          </select>
+          {/* Year */}
+          <select className={classes.Date} onChange={props.changeYear}>
+            <option disabled={true} defaultValue={true}>Year</option>
+            {monthsArr.map((year, index) => {
+              return <option value={currentYear + index}>{currentYear + index}</option>
+            })}
+          </select>
+          {/* CVV */}
+          <input
+            className={[classes.Date, classes.CvvBox].join(' ')}
+            type="text"
+            name="cvv"
+            onChange={props.changeCVV}
+            onFocus={props.cardFlip} />
+        </div>
+
       </div>
     </form >)
 };

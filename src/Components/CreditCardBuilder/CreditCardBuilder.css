@@ -1,10 +1,7 @@
 .Card{
-    /* z-index: 1; */
-    /* position: absolute; */
     display:flex;
     align-items: center;
     justify-content: center;
-    /* margin-top: 250px; */
 }
 
 .Form{

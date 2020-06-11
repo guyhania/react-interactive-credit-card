@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import classes from './CreditCardBuilder.css';
-import Auxiliary from '../../hoc/Auxiliary';
 import Card from '../Card/Card';
-import Header from '../Header/Header';
 import Form from '../Form/Form';
 
 class CreditCardBuilder extends Component {
@@ -58,9 +56,8 @@ class CreditCardBuilder extends Component {
 
     render() {
         return (
-            <Auxiliary>
-                <div className={classes.Card}>
-                    <Header />
+            <>
+                <div className={classes.Card}>                    
                     <Card
                         number={this.state.cardNumber}
                         name={this.state.name}
@@ -78,7 +75,7 @@ class CreditCardBuilder extends Component {
 
                 </div>
 
-            </Auxiliary>
+            </>
         );
     }
 
