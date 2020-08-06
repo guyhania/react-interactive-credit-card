@@ -9,9 +9,9 @@ const Digits = (props) => {
             <div className={classes.Auxl} onClick={props.clicked}>
                 <div className={classes.Regular}>
                     {props.digits.slice(0, 4).map((dig, index) => (
-                        <SwitchTransition >
+                        <SwitchTransition key={index}>
                             <CSSTransition
-                                key={dig}
+                                key={dig.toString()}
                                 in={false}
                                 timeout={200}
                                 classNames={{
@@ -31,7 +31,7 @@ const Digits = (props) => {
                 <div className={classes.Secret}>
                     {props.digits.slice(4, 8).map((dig, index) => (
                         (dig !== '#') ?
-                            <SwitchTransition >
+                            <SwitchTransition key={index}>
                                 <CSSTransition
                                     key={dig}
                                     in={false}
@@ -48,7 +48,7 @@ const Digits = (props) => {
                                 </CSSTransition>
                             </SwitchTransition>
                             :
-                            <SwitchTransition >
+                            <SwitchTransition key={index} >
                                 <CSSTransition
                                     key={dig}
                                     in={false}
@@ -70,7 +70,7 @@ const Digits = (props) => {
                 <div className={classes.Regular}>
                     {props.digits.slice(8, 12).map((dig, index) => (
                         (dig !== '#') ?
-                            <SwitchTransition >
+                            <SwitchTransition key={index} >
                                 <CSSTransition
                                     key={dig}
                                     in={false}
@@ -87,7 +87,7 @@ const Digits = (props) => {
                                 </CSSTransition>
                             </SwitchTransition>
                             :
-                            <SwitchTransition >
+                            <SwitchTransition key={index} >
                                 <CSSTransition
                                     key={dig}
                                     in={false}
@@ -108,7 +108,7 @@ const Digits = (props) => {
 
                 <div className={classes.Regular}>
                     {props.digits.slice(12, 16).map((dig, index) => (
-                        <SwitchTransition >
+                        <SwitchTransition key={index} >
                             <CSSTransition
                                 key={dig}
                                 in={false}

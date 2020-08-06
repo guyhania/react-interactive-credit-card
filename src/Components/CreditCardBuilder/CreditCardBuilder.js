@@ -3,16 +3,16 @@ import classes from './CreditCardBuilder.css';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
 
+const defaultCard = ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'];
+
 class CreditCardBuilder extends Component {
     state = {
-        cardNumber: ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+        cardNumber: defaultCard,
         name: "FULL NAME",
         month: "MM",
         year: "YY",
         cvv: "",
         flip: false
-
-
     }
 
     cardNumberHandler = (event) => {
@@ -27,7 +27,7 @@ class CreditCardBuilder extends Component {
                 cardNumber: number,
             });
         }
-        else this.setState({ cardNumber: ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'] });
+        else this.setState({ cardNumber: defaultCard });
     }
 
     nameHandler = (event) => {
@@ -43,27 +43,28 @@ class CreditCardBuilder extends Component {
         const val = event.target.value;
         this.setState({ year: val })
     }
-    
+
     cvvHandler = (event) => {
         const val = event.target.value;
         this.setState({ cvv: val })
     }
 
     flipCardHandler = (event) => {
-        // this.setState({cvv: !prevstate})
+        this.setState({flip: !this.state.flip})
+        console.log("Flip:"+this.state.flip)
     }
-    
 
     render() {
         return (
             <>
-                <div className={classes.Card}>                    
+                <div className={classes.Card}>
                     <Card
                         number={this.state.cardNumber}
                         name={this.state.name}
                         month={this.state.month}
                         year={this.state.year}
-                        cvv={this.state.cvv} />
+                        cvv={this.state.cvv}
+                        flip={this.state.flip} />
 
                     <Form
                         changeNumber={this.cardNumberHandler}
@@ -71,10 +72,9 @@ class CreditCardBuilder extends Component {
                         changeMonth={this.monthHandler}
                         changeYear={this.yearHandler}
                         changeCVV={this.cvvHandler}
-                         />
-
+                        cardFlip = {this.flipCardHandler}
+                    />
                 </div>
-
             </>
         );
     }
