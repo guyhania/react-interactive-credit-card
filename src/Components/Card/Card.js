@@ -6,11 +6,11 @@ import Date from './Date/Date';
 import Cvv from './Cvv/Cvv';
 import Rfid from '../../assets/rfid.png';
 
-
-
 const Card = (props) => {
+    
     const wrapClasses = [classes.WrapCard];
     const cardClasses = [classes.Card];
+    
     useEffect(() => {
         wrapClasses.push(classes.WrapCard);
         cardClasses.push(classes.Card);
@@ -19,14 +19,16 @@ const Card = (props) => {
     if (props.flip) {
         wrapClasses.push(classes.FlipWrap)
         cardClasses.push(classes.FlipCard)
-
     }
+    
     return (
         <>
             <div className={wrapClasses.join(' ')}>
                 <div className={cardClasses.join(' ')}>
                     <div className={classes.FrontCard}>
+                        <div className={classes.Digits}>
                         <Digits digits={props.number} clicked={props.digitsClicked} />
+                        </div>
                         <div className={classes.Details}>
                             <Name className={classes.CardHolder} name={props.name} />
                             <Date month={props.month} year={props.year} />

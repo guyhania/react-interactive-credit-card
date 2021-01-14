@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './CreditCardBuilder.css';
+// import classes from './CreditCardBuilder.css';
 import Card from '../Card/Card';
 import Form from '../Form/Form';
 
@@ -16,8 +16,9 @@ class CreditCardBuilder extends Component {
     }
 
     cardNumberHandler = (event) => {
-        const val = event.target.value;
+        let val = event.target.value;
         if (val.length > 0) {
+            val = val.replace(/\s/g, "")
             const number = val.split("");
             const arrLength = number.length;
             for (let i = 0; i < 16 - arrLength; i++) {
@@ -50,14 +51,14 @@ class CreditCardBuilder extends Component {
     }
 
     flipCardHandler = (event) => {
-        this.setState({flip: !this.state.flip})
-        console.log("Flip:"+this.state.flip)
+        this.setState({ flip: !this.state.flip })
+        console.log("Flip:" + this.state.flip)
     }
 
     render() {
         return (
             <>
-                <div className={classes.Card}>
+                <div>
                     <Card
                         number={this.state.cardNumber}
                         name={this.state.name}
@@ -72,7 +73,7 @@ class CreditCardBuilder extends Component {
                         changeMonth={this.monthHandler}
                         changeYear={this.yearHandler}
                         changeCVV={this.cvvHandler}
-                        cardFlip = {this.flipCardHandler}
+                        cardFlip={this.flipCardHandler}
                     />
                 </div>
             </>

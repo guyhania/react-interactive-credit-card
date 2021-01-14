@@ -1,5 +1,4 @@
 import React from 'react';
-// , { useState }
 import classes from './Form.module.css';
 
 
@@ -7,17 +6,11 @@ const monthsArr = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "
 const currentYear = new Date().getFullYear();
 
 const Form = props => {
-  // const [number, setNumber] = useState('');
 
-  // const maxInput = (event) => {
-  //   const val = event.target.value;
-  //   let newNumber={...number};
-  //   newNumber=event.target.value;
-
-  // (val.length > 3) ? setNumber(newNumber.replace(/\d{4}/g, "$&" + " ")) : setNumber(newNumber)
-  // console.log(number);
-  // return val.length < 16 ? true : event.preventDefault();
-  // }
+  const creditNumberHandler = (event) => {
+    let input = event.target.value;  
+    event.target.value = (input.length > 3) ? input.replace(/\d{4}$/g, "$&" + " ") : input;
+  }
 
   return (
     <form className={classes.Main} autoComplete="off">
@@ -29,10 +22,11 @@ const Form = props => {
         <input
           autoFocus
           className={classes.Input}
-          type="number"
+          // type="number"
           name="number"
-          // onKeyPress={maxInput}
-          onChange={props.changeNumber} />
+          onKeyPress={creditNumberHandler}
+          onChange={props.changeNumber}
+          maxLength={19} />
       </div>
 
       {/* Cardholder name */}
@@ -43,7 +37,8 @@ const Form = props => {
           className={classes.Input}
           type="text"
           name="name"
-          onChange={props.changeName} />
+          onChange={props.changeName}
+          maxLength={19} />
       </div>
 
       {/*Expiration Date*/}
@@ -72,7 +67,8 @@ const Form = props => {
           name="cvv"
           onChange={props.changeCVV}
           onFocus={props.cardFlip}
-          onBlur={props.cardFlip} />
+          onBlur={props.cardFlip}
+          maxLength={3} />
       </div>
 
     </form >)

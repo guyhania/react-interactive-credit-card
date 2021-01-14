@@ -41,7 +41,13 @@ transform-style: preserve-3d;
 
 }
 
+.Digits{
+  /* background-color: blanchedalmond;   */
+  margin-bottom: 2%;
+}
+
 .Details{
+/* background-color: burlywood; */
 box-sizing: border-box;
 display: flex;
 justify-content: space-between;
