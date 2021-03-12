@@ -12,7 +12,9 @@ class CreditCardBuilder extends Component {
         month: "MM",
         year: "YY",
         cvv: "",
-        flip: false
+        flip: false,
+        todos:[]
+
     }
 
     cardNumberHandler = (event) => {
@@ -52,7 +54,6 @@ class CreditCardBuilder extends Component {
 
     flipCardHandler = (event) => {
         this.setState({ flip: !this.state.flip })
-        console.log("Flip:" + this.state.flip)
     }
 
     render() {

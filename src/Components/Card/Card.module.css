@@ -82,11 +82,11 @@ justify-content: space-between;
     transform: scaleX(-1);
 }
 
-@media (min-width: 500px) and (min-height: 400px) {
+@media (max-width: 426px) {
     .WrapCard{
-        width: 400px;
+        width: 95%;
         height: 259px; 
-        margin-top: 50px;
+        margin-top: 5%;
     }
 }
 @media (min-width: 500px) and (min-height: 401px) {
