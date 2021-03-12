@@ -10,6 +10,7 @@ const Card = (props) => {
     
     const wrapClasses = [classes.WrapCard];
     const cardClasses = [classes.Card];
+    const remove="remove"
     
     useEffect(() => {
         wrapClasses.push(classes.WrapCard);

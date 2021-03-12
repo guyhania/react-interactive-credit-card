@@ -81,7 +81,9 @@ justify-content: space-between;
     height: auto;
     transform: scaleX(-1);
 }
-
+.body{
+    
+}
 @media (max-width: 426px) {
     .WrapCard{
         width: 95%;

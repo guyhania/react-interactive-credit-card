@@ -13,7 +13,7 @@ class CreditCardBuilder extends Component {
         year: "YY",
         cvv: "",
         flip: false,
-        todos:[]
+        
 
     }
 
